@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LYTE</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="images/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="images/favicon-16x16.png"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css"
+      integrity="sha512-MqL4+Io386IOPMKKyplKII0pVW5e+kb+PI/I3N87G3fHIfrgNNsRpzIXEi+0MQC0sR9xZNqZqCYVcC61fL5+Vg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="swiper-bundle.min.css" />
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      @keyframes fromBottomHeading {
+        0% {
+          transform: translateY(50px);
+          opacity: 0;
+        }
+        100% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes fromBottomParagraph {
+        0% {
+          transform: translateY(50px);
+          opacity: 0;
+        }
+        100% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes fromBottomButton {
+        0% {
+          transform: translateY(50px);
+          opacity: 0;
+        }
+        100% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      .animate-from-bottom-heading {
+        animation: fromBottomHeading 1s ease-out;
+      }
+
+      .animate-from-bottom-paragraph {
+        animation: fromBottomParagraph 1.2s ease-out; /* Adjusted timing for staggered effect */
+      }
+
+      .animate-from-bottom-button {
+        animation: fromBottomButton 1.4s ease-out; /* Adjusted timing for staggered effect */
+      }
+      @layer utilities {
+        .custom-image-container {
+          position: relative;
+          max-width: 400px;
+          margin: auto;
+        }
+        .custom-image-container::before {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 10%;
+          left: 10%;
+          width: 100%;
+          height: 100%;
+          background-color: #be4804;
+          z-index: -1;
+        }
+      }
+      .upside-down {
+        transform: rotate(180deg);
+      }
+    </style>
+  </head>
+  <body class="w-full">
+    <!--==================== HEADER ====================-->
+    <header
+      class="bg-white fixed top-0 left-0 right-0 z-30 border-b border-black border-opacity-20"
+    >
+      <nav
+        class="nav container py-2 lg:py-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl px-4 md:px-8"
+      >
+        <a href="/">
+          <img src="images/logo.png" alt="" class="h-10 nav_logo" />
+        </a>
+
+        <div class="nav_menu" id="nav-menu">
+          <ul class="nav_list">
+            <li class="nav_item">
+              <a
+                href="/"
+                class="font-HelveticaNowDisplay text-black nav_link text-sm"
+                ><i class="ri-arrow-right-up-line"></i>
+                <span>HOME</span>
+              </a>
+            </li>
+            <li class="nav_item">
+              <a
+                href="#products-section"
+                class="font-HelveticaNowDisplay text-black nav_link text-sm"
+                ><i class="ri-arrow-right-up-line"></i>
+                <span>PRODUCTS</span>
+              </a>
+            </li>
+            <li class="nav_item">
+              <a
+                href="#about"
+                class="font-HelveticaNowDisplay text-black nav_link text-sm"
+                ><i class="ri-arrow-right-up-line"></i> <span>ABOUT US</span></a
+              >
+            </li>
+            <li class="nav_item">
+              <a
+                href="#contact"
+                class="font-HelveticaNowDisplay text-black nav_link text-sm"
+                ><i class="ri-arrow-right-up-line"></i> <span>CONTACT</span></a
+              >
+            </li>
+          </ul>
+
+          <!--Close Button-->
+          <div class="nav_close" id="nav-close">
+            <i class="ri-close-line text-black text-xl"></i>
+          </div>
+
+          <!--Nav Social Section-->
+          <div class="nav_social">
+            <a href="" class="nav_social_link" target="_blank"
+              ><i class="ri-facebook-box-line text-black text-xl"></i
+            ></a>
+            <a href="" class="nav_social_link" target="_blank"
+              ><i class="ri-instagram-line text-black text-xl"></i
+            ></a>
+            <a href="" class="nav_social_link" target="_blank"
+              ><i class="ri-telegram-line text-black text-xl"></i
+            ></a>
+            <a href="" class="nav_social_link" target="_blank"
+              ><i class="ri-tiktok-line text-black text-xl"></i
+            ></a>
+          </div>
+        </div>
+
+        <!--Toggle Button For mobile-->
+        <div class="nav_toggle" id="nav-toggle">
+          <i class="ri-menu-line text-black text-xl"></i>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!--          Main Section          -->
+      <section class="hidden h-lvh mt-12 lg:flex items-center relative">
+        <video
+          autoplay
+          muted
+          loop
+          class="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="images/Website banner.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div
+          class="relative z-10 grid max-w-screen-xl mx-auto px-8 py-8 lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12"
+        >
+          <div class="place-self-center lg:col-span-7">
+            <h1
+              class="hero-txt max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-6xl xl:text-6xl text-white font-HelveticaNowDisplay-ExtraBold"
+            >
+              ACHIEVE INSTANT <br />
+              HYDRATION
+            </h1>
+            <p
+              class="max-w-2xl mb-6 font-light text-gray-300 lg:mb-8 md:text-lg lg:text-2xl dark:text-gray-300"
+            >
+              Boost your energy, enhance performance, and stay at your peak with
+              our refreshing Lemon and Fruit Cocktail flavors.
+            </p>
+            <a href="#products-section">
+              <button
+                class="btn px-8 py-4 font-HelveticaNowDisplay-Bold md:px-12 md:py-4 lg:text-xl"
+              >
+                CHECK OUT OUR PRODUCTS
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!------------- Hero Section Mobile --------------->
+      <section class="lg:hidden h-lvh flex items-end relative">
+        <video
+          autoplay
+          muted
+          loop
+          class="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="images/Website banner.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div
+          class="relative z-10 grid max-w-screen-xl px-4 md:px-8 py-8 md:mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12"
+        >
+          <div class="mr-auto place-self-center lg:col-span-7">
+            <h1
+              class="hero-txt max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl text-white font-HelveticaNowDisplay-ExtraBold"
+            >
+              ACHIEVE INSTANT <br />
+              HYDRATION
+            </h1>
+            <p
+              class="max-w-2xl mb-6 font-light text-gray-300 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-300"
+            >
+              Boost your energy, enhance performance, and stay at your peak with
+              our refreshing Lemon and Fruit Cocktail flavors.
+            </p>
+            <a href="#products-section">
+              <button
+                class="btn px-8 py-4 font-HelveticaNowDisplay-Bold md:px-12 md:py-4 lg:text-xl"
+              >
+                CHECK OUT OUR PRODUCTS
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Core Values Section -->
+      <section class="bg-white" id="about">
+        <div
+          style="background-color: #304a57"
+          class="max-w-full text-2xl md:text-4xl font-extrabold leading-none font-HelveticaNowDisplay-ExtraBold text-white text-center py-8 md:mb-8"
+        >
+          ABOUT US
+          <p
+            class="text-center mt-2 text-base text-gray-100 uppercase font-HelveticaNowDisplay tracking-widest"
+          >
+            Commitment to Excellence
+          </p>
+        </div>
+        <div class="container max-w-screen-xl px-4 md:px-8 py-8 mx-auto">
+          <!-- Main Text -->
+
+          <!-- Our Mission -->
+          <div
+            class="flex flex-col gap-8 md:flex-row-reverse items-center md:mb-36 mb-8"
+          >
+            <div class="w-full md:w-1/2 order-2 md:order-1">
+              <h3 class="font-HelveticaNowDisplay-Bold text-5xl mb-8">
+                Our <br />
+                Mission
+              </h3>
+              <p class="text-gray-600 md:text-xl font-HelveticaNowDisplay">
+                At our core, we're all about bringing health and happiness to
+                Ethiopian communities and beyond. We started with a simple idea:
+                create delicious and nutritious products that make a real
+                difference. Our first creation, a vitamin-packed electrolyte
+                drink mix, is just the beginning. We're here to keep innovating
+                and make sure everyone has access to the nutrients they need to
+                thrive, one sip and bite at a time.
+              </p>
+            </div>
+            <div class="w-full md:w-1/2 order-1 md:order-2 flex justify-center">
+              <img
+                src="images/about.jpg"
+                alt="Our Mission Icon"
+                class="rounded-lg"
+              />
+            </div>
+          </div>
+          <!-- Our Vision -->
+          <div
+            class="flex flex-col gap-8 md:gap-16 md:flex-row-reverse items-center md:mb-36 mb-8"
+          >
+            <div class="w-full md:w-1/2 flex justify-center gap-2">
+              <img
+                src="images/fam2.jpg"
+                alt="Our Mission Icon"
+                class="rounded-lg md:w-3/5 h-full"
+              />
+              <img
+                src="images/fam1.jpg"
+                alt="Our Mission Icon"
+                class="hidden md:block rounded-lg w-1/2 h-full"
+              />
+            </div>
+            <div class="w-full md:w-1/2">
+              <h3 class="font-HelveticaNowDisplay-Bold text-5xl mb-8">
+                Our <br />
+                Vision
+              </h3>
+              <p class="text-gray-600 md:text-xl font-HelveticaNowDisplay">
+                Our dream is to become a household name in not just Ethiopia but
+                all of Africa. Known for our passion for health and wellness.
+                Imagine a future where everyone, from kids to grandparents, has
+                the energy and vitality to live their best lives. We're working
+                towards that vision by expanding our range to include
+                life-saving oral rehydration salts for aid and refreshing
+                vitamin water for everyday enjoyment. Together, we're building
+                healthier and happier communities.
+              </p>
+            </div>
+          </div>
+          <!-- Our Purpose -->
+          <div
+            class="flex flex-col gap-8 md:flex-row-reverse items-center mb-16"
+          >
+            <div class="w-full md:w-1/2 order-2 md:order-1">
+              <h3 class="font-HelveticaNowDisplay-Bold text-5xl mb-8">
+                Our <br />
+                Purpose
+              </h3>
+              <p class="text-gray-600 md:text-xl font-HelveticaNowDisplay">
+                We started this journey with a heartfelt goal: to tackle
+                nutritional gaps and boost overall health in Africa. Our story
+                begins with our first product, a tasty and effective electrolyte
+                drink mix packed with essential vitamins. But we’re not stopping
+                there. We're also committed to providing oral rehydration salts
+                for those in need and bringing vitamin water to your local store
+                shelves. Every product we create is a step towards a brighter,
+                healthier future for everyone.
+              </p>
+            </div>
+            <div class="w-full md:w-1/2 order-1 md:order-2 flex justify-center">
+              <img
+                src="images/hiking.jpg"
+                alt="Our Mission Icon"
+                class="rounded-lg h-full"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!------------ Flavors Section   ------------------->
+
+      <section
+        data-comp="video"
+        data-comp-id="018eb569-4b1b-7d63-9156-c1768162a0b1"
+      >
+        <div
+          style="background-color: #304a57"
+          class="max-w-full text-2xl md:text-4xl font-extrabold tracking-tight leading-none font-HelveticaNowDisplay-ExtraBold text-white text-center py-8"
+        >
+          ACHIEVE HYDRATION VIA NATURAL FLAVOR
+        </div>
+        <div
+          class="relative undefined undefined undefined undefined undefined undefined"
+        >
+          <div class=" ">
+            <div class="mx-auto max-w-full">
+              <div class="relative bg-lightGray md:hidden aspect-[1/1]">
+                <span class="group absolute inset-0 h-full w-full"
+                  ><video
+                    aria-label="Video content"
+                    autoplay=""
+                    class="absolute inset-0 h-full w-full object-cover cursor-pointer"
+                    loop=""
+                    muted=""
+                    playsinline=""
+                    poster="https://cdn.shopify.com/s/files/1/1338/1013/files/image_2023.png?v=1713986700"
+                    __idm_id__="131074"
+                  >
+                    <source
+                      src="images/sample-vid.mp4"
+                      type="video/mp4"
+                    /></video
+                  ><svg
+                    viewBox="0 0 24 24"
+                    class="pointer-events-none absolute left-1/2 top-1/2 w-10 -translate-x-1/2 -translate-y-1/2 text-white opacity-0 transition group-hover:opacity-90"
+                  >
+                    <title>Pause</title>
+                    <use
+                      href="/svgs/pause.svg#pause"
+                      class="pointer-events-none"
+                    ></use></svg
+                ></span>
+              </div>
+              <div
+                class="relative hidden bg-lightGray md:block md:aspect-[16/9]"
+              >
+                <span class="group absolute inset-0 h-full w-full"
+                  ><video
+                    aria-label="Video content"
+                    autoplay=""
+                    class="absolute inset-0 h-full w-full object-cover cursor-pointer"
+                    loop=""
+                    muted=""
+                    playsinline=""
+                    poster="https://cdn.shopify.com/s/files/1/1338/1013/files/image_2023.png?v=1713986700"
+                    __idm_id__="131073"
+                  >
+                    <source
+                      src="images/sample-vid-big.mp4"
+                      type="video/mp4"
+                    /></video
+                  ><svg
+                    viewBox="0 0 24 24"
+                    class="pointer-events-none absolute left-1/2 top-1/2 w-10 -translate-x-1/2 -translate-y-1/2 text-white opacity-0 transition group-hover:opacity-90"
+                  >
+                    <title>Pause</title>
+                    <use
+                      href="/svgs/pause.svg#pause"
+                      class="pointer-events-none"
+                    ></use></svg
+                ></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Core Values Section -->
+      <section class="bg-white mt-8">
+        <div class="container max-w-screen-xl px-4 md:px-8 py-8 mx-auto">
+          <!-- Our Purpose -->
+          <div
+            class="flex flex-col gap-8 md:flex-row-reverse items-center mb-16"
+          >
+            <div class="w-full md:w-1/2 order-2 md:order-1">
+              <h3
+                class="font-HelveticaNowDisplay-Bold text-3xl md:text-4xl mb-16"
+              >
+                Science based Formulation to deliver optimum hydration
+              </h3>
+              <div class="flex justify-center md:justify-between gap-8 mb-16">
+                <div class="flex flex-col justify-center items-center gap-2">
+                  <img
+                    src="images/vegan.png"
+                    alt="Dairy Free/ Vegan"
+                    class="w-14"
+                  />
+                  <p
+                    class="font-HelveticaNowDisplay-Bold text-gray-600 text-sm md:text-lg text-center"
+                  >
+                    Dairy Free/ Vegan
+                  </p>
+                </div>
+                <div class="flex flex-col justify-center items-center gap-2">
+                  <img
+                    src="images/no-sugar.png"
+                    alt="No Artificial Sweeteners"
+                    class="w-14 md:w-16"
+                  />
+                  <p
+                    class="font-HelveticaNowDisplay-Bold text-gray-600 text-sm md:text-lg text-center"
+                  >
+                    No Artificial <br />
+                    Sweeteners
+                  </p>
+                </div>
+                <div class="flex flex-col justify-center items-center gap-2">
+                  <img
+                    src="images/no-preservatives.png"
+                    alt="No Preservatives"
+                    class="w-14 md:w-16"
+                  />
+                  <p
+                    class="font-HelveticaNowDisplay-Bold text-gray-600 text-sm md:text-lg text-center"
+                  >
+                    No Preservatives
+                  </p>
+                </div>
+              </div>
+              <h3
+                class="font-HelveticaNowDisplay-Bold text-3xl md:text-4xl mb-16"
+              >
+                Vitamin Benefits
+              </h3>
+              <div class="mt-8 md:mt-16 grid lg:grid-cols-3 grid-cols-2 gap-6">
+                <div class="flex flex-col justify-center items-center gap-2">
+                  <img
+                    src="images/molecule.png"
+                    alt="Cellular function"
+                    class="w-14"
+                  />
+                  <p
+                    class="font-HelveticaNowDisplay-Bold text-gray-600 text-sm md:text-base text-center"
+                  >
+                    Cellular function
+                  </p>
+                </div>
+                <div class="flex flex-col justify-center items-center gap-2">
+                  <img
+                    src="images/brain.png"
+                    alt="Aids/supports Brain health"
+                    class="w-14"
+                  />
+                  <p
+                    class="font-HelveticaNowDisplay-Bold text-gray-600 text-sm md:text-base text-center"
+                  >
+                    Aids/supports Brain health
+                  </p>
+                </div>
+                <div class="flex flex-col justify-center items-center gap-2">
+                  <img
+                    src="images/thunder.png"
+                    alt="Convert food into energy"
+                    class="w-14"
+                  />
+                  <p
+                    class="font-HelveticaNowDisplay-Bold text-gray-600 text-sm md:text-base text-center"
+                  >
+                    Convert food into energy
+                  </p>
+                </div>
+                <div class="flex flex-col justify-center items-center gap-2">
+                  <img
+                    src="images/security.png"
+                    alt="Supports your immune system"
+                    class="w-14"
+                  />
+                  <p
+                    class="font-HelveticaNowDisplay-Bold text-gray-600 text-sm md:text-base text-center"
+                  >
+                    Supports your immune system
+                  </p>
+                </div>
+                <div class="flex flex-col justify-center items-center gap-2">
+                  <img
+                    src="images/antioxidant.png"
+                    alt="Antioxidant benefits such as slowing of skin aging"
+                    class="w-14 md:w-16"
+                  />
+                  <p
+                    class="font-HelveticaNowDisplay-Bold text-gray-600 text-sm md:text-base text-center"
+                  >
+                    Antioxidant benefits such as slowing of skin aging
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 order-1 md:order-2 flex justify-center">
+              <img
+                src="images/science.jpg"
+                alt="Our Mission Icon"
+                class="rounded-lg h-full"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!------------ Science & Benefits Section ---------------->
+      <section class="">
+        <div class="flex lg:flex-row-reverse flex-col">
+          <div class="lg:w-1/2">
+            <img src="images/benefits.jpg" alt="" class="w-full" />
+          </div>
+
+          <div
+            class="lg:w-1/2 text-white flex justify-center items-center"
+            style="background-color: #304a57"
+          >
+            <div class="container mx-auto px-4 md:px-8 py-8">
+              <div
+                class="mb-4 md:mb-8 text-5xl font-extrabold tracking-tight leading-none font-HelveticaNowDisplay-ExtraBold text-white py-8 xl:px-8 2xl:px-32"
+              >
+                <span class="animate-from-bottom-heading md:tracking-widest"
+                  >REAL BENEFITS, <br />
+                  REAL IMPACT</span
+                >
+              </div>
+              <div class="flex gap-4 mb-8 xl:px-8 2xl:px-32">
+                <div class="flex flex-col">
+                  <div>
+                    <h2
+                      class="font-RockidsDisplay tracking-widest md:text-4xl text-3xl md:mb-1 uppercase text-gray-50"
+                    >
+                      Rapid Recovery
+                    </h2>
+                  </div>
+                  <div>
+                    <p
+                      class="text-base md:text-xl font-HelveticaNowDisplay text-gray-300"
+                    >
+                      Feel better faster, whether you’re recovering from
+                      illness, intense workouts, or just need a hydration boost.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex gap-4 mb-8 md:mb-4 xl:px-8 2xl:px-32">
+                <div class="flex flex-col">
+                  <div>
+                    <h2
+                      class="font-RockidsDisplay tracking-widest md:text-4xl text-3xl md:mb-1 uppercase text-gray-50"
+                    >
+                      Healthy & Balanced
+                    </h2>
+                  </div>
+                  <div>
+                    <p
+                      class="text-base md:text-xl font-HelveticaNowDisplay text-gray-300"
+                    >
+                      Maintain essential electrolyte levels for optimal health
+                      and performance.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!------------ Science & Benefits Section ---------------->
+      <section class="">
+        <div
+          class="bg-orange-500 max-w-full text-2xl md:text-4xl font-extrabold tracking-tight leading-none font-HelveticaNowDisplay-ExtraBold text-white text-center py-8"
+        >
+          Benefits of <br />
+          Mix of electrolytes + vitamins
+        </div>
+        <div class="flex lg:flex-row flex-col">
+          <div class="lg:w-1/2">
+            <img src="images/benefits.jpg" alt="" class="w-full h-full" />
+          </div>
+
+          <div
+            class="lg:w-1/2 text-white flex justify-center items-center"
+            style="background-color: #304a57"
+          >
+            <div class="container mx-auto px-4 md:px-8 py-16">
+              <div class="flex gap-4 mb-8 xl:px-8 2xl:px-32">
+                <div class="flex flex-col">
+                  <div>
+                    <h2
+                      class="font-RockidsDisplay tracking-widest md:text-4xl text-3xl md:mb-1 uppercase text-gray-50"
+                    >
+                      Superior Hydration & Energy
+                    </h2>
+                  </div>
+                  <div>
+                    <p
+                      class="text-base md:text-xl font-HelveticaNowDisplay text-gray-300"
+                    >
+                      Hydrate quickly and effectively while converting nutrients
+                      into energy, keeping you refreshed and ready to tackle
+                      your day.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex gap-4 mb-8 xl:px-8 2xl:px-32">
+                <div class="flex flex-col">
+                  <div>
+                    <h2
+                      class="font-RockidsDisplay tracking-widest md:text-4xl text-3xl md:mb-1 uppercase text-gray-50"
+                    >
+                      Immune Support
+                    </h2>
+                  </div>
+                  <div>
+                    <p
+                      class="text-base md:text-xl font-HelveticaNowDisplay text-gray-300"
+                    >
+                      Boost your immune system with Vitamin C and B vitamins,
+                      helping you stay healthy and recover faster from
+                      illnesses.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex gap-4 mb-8 xl:px-8 2xl:px-32">
+                <div class="flex flex-col">
+                  <div>
+                    <h2
+                      class="font-RockidsDisplay tracking-widest md:text-4xl text-3xl md:mb-1 uppercase text-gray-50"
+                    >
+                      Brain & Nervous System Health
+                    </h2>
+                  </div>
+                  <div>
+                    <p
+                      class="text-base md:text-xl font-HelveticaNowDisplay text-gray-300"
+                    >
+                      Enhance mental clarity and reduce fatigue with essential B
+                      vitamins that support healthy nerve function and cognitive
+                      performance
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex gap-4 mb-8 xl:px-8 2xl:px-32">
+                <div class="flex flex-col">
+                  <div>
+                    <h2
+                      class="font-RockidsDisplay tracking-widest md:text-4xl text-3xl md:mb-1 uppercase text-gray-50"
+                    >
+                      Muscle Function & Recovery
+                    </h2>
+                  </div>
+                  <div>
+                    <p
+                      class="text-base md:text-xl font-HelveticaNowDisplay text-gray-300"
+                    >
+                      Prevent muscle cramps and support optimal muscle function
+                      with electrolytes, while vitamins aid in faster recovery
+                      and wound healing
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--------------Products Section ---------------->
+
+      <section class="" id="products-section">
+        <div
+          class="w-full flex flex-col md:items-center justify-center py-8 md:py-12 md:gap-4"
+          style="background-color: #f7f3ec"
+        >
+          <div class="container mx-auto px-4 md:px-8 pt-8">
+            <h2 class="text-3xl md:text-5xl font-HelveticaNowDisplay-ExtraBold">
+              OUR PRODUCTS
+            </h2>
+          </div>
+          <div class="text-wrap container mx-auto px-4 md:px-8">
+            <p
+              class="text-base md:text-lg font-HelveticaNowDisplay text-wrap mb-4 md:w-1/2"
+            >
+              Lyte is available in two refreshing flavors designed to quench
+              your thirst and replenish essential electrolytes: Lemon and Fruit
+              Cocktail.
+            </p>
+          </div>
+          <div class="swiper my-swiper py-16 px-16">
+            <div class="swiper-wrapper">
+              <!-- Slide 1 -->
+              <div class="swiper-slide flex justify-center items-center">
+                <div class="bg-slate-200 items-center drop-shadow-xl py-4 px-4">
+                  <h4
+                    class="font-RockidsDisplay tracking-widest mb-2 text-sm text-gray-500"
+                  >
+                    Lyte Hydration Mix
+                  </h4>
+                  <img
+                    src="images/green-new.png"
+                    class="md:w-20 w-16 z-10 mx-auto -rotate-12 drop-shadow-xl"
+                    alt=""
+                  />
+                  <div>
+                    <h3
+                      class="md:text-xl text-lg font-HelveticaNowDisplay-ExtraBold w-3/4 mt-4"
+                    >
+                      LEMON FLAVOR
+                    </h3>
+                    <div class="">
+                      <hr
+                        class="border-2 border-emerald-500 w-1/4 mb-4 rounded-md"
+                      />
+                    </div>
+                    <p class="text-wrap text-gray-500">
+                      A zesty and invigorating flavor that refreshes your
+                      senses.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide flex justify-center items-center">
+                <div class="bg-slate-200 items-center drop-shadow-xl py-4 px-4">
+                  <h4
+                    class="font-RockidsDisplay tracking-widest mb-2 text-sm text-gray-500"
+                  >
+                    Lyte Hydration Mix
+                  </h4>
+                  <img
+                    src="images/orange-new.png"
+                    class="md:w-20 w-16 mx-auto z-10 -rotate-12 drop-shadow-xl"
+                    alt=""
+                  />
+                  <div>
+                    <h3
+                      class="md:text-xl text-lg font-HelveticaNowDisplay-ExtraBold w-3/4 mt-4"
+                    >
+                      FRUIT COCKTAIL
+                    </h3>
+                    <div class="">
+                      <hr
+                        class="border-2 border-orange-500 w-1/4 mb-4 rounded-md"
+                      />
+                    </div>
+                    <p class="text-wrap text-gray-500">
+                      A delicious blend of tropical fruits that offers a burst
+                      of flavor.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination mt-16"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-----------  Footer  ----------->
+    <footer
+      class="tracking-wider"
+      id="contact"
+      style="background-color: #304a57"
+    >
+      <div
+        class="pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl px-4 md:px-8"
+      >
+        <div class="grid gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="sm:col-span-2">
+            <a
+              href="/"
+              aria-label="Go home"
+              title="Company"
+              class="inline-flex items-center"
+            >
+              <img
+                class="w-20"
+                src="images/logo-white.png"
+                alt="Company Logo"
+                srcset=""
+              />
+            </a>
+            <div class="mt-4 lg:max-w-sm">
+              <p class="text-lg font-HelveticaNowDisplay text-gray-200">
+                We are Ethiopia's leading electrolyte beverage company,
+                dedicated to innovation and quality.
+              </p>
+            </div>
+          </div>
+          <div class="space-y-2">
+            <p
+              class="text-base lg:text-xl md:text-lg text-slate-50 font-bold font-HelveticaNowDisplay-Bold mb-4 tracking-widest leading-normal"
+            >
+              CONTACTS
+            </p>
+            <div class="flex gap-2">
+              <img src="images/phone-solid-24.png" alt="" class="w-5" />
+              <a
+                href="tel:850-123-5021"
+                aria-label="Our phone"
+                title="Our phone"
+                class="transition-colors duration-300 hover:text-white font-HelveticaNowDisplay text-sm text-gray-200"
+                >850-123-5021</a
+              >
+            </div>
+            <div class="flex gap-2">
+              <img src="images/envelope-solid-24.png" alt="" class="w-5" />
+              <a
+                href="mailto:info@lorem.mail"
+                aria-label="Our email"
+                title="Our email"
+                class="transition-colors duration-300 hover:text-white font-HelveticaNowDisplay text-sm text-gray-200"
+                >info@lorem.mail</a
+              >
+            </div>
+            <div class="flex gap-2">
+              <img src="images/location-plus-solid-24.png" alt="" class="w-5" />
+              <a
+                href="https://www.google.com/maps"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Our address"
+                title="Our address"
+                class="transition-colors duration-300 hover:text-white font-HelveticaNowDisplay text-sm text-gray-200"
+              >
+                Addis Ababa, Ethiopia
+              </a>
+            </div>
+          </div>
+          <div>
+            <span
+              class="text-base lg:text-xl md:text-lg text-slate-50 font-bold font-HelveticaNowDisplay-Bold tracking-widest leading-normal"
+              >SOCIAL</span
+            >
+            <div class="flex items-center mt-4 space-x-3">
+              <a href="/" class="transition-colors duration-300 text-gray-200">
+                <img src="images/twitter-logo-24.png" alt="" />
+              </a>
+              <a href="/" class="transition-colors duration-300 text-gray-200">
+                <img src="images/instagram-alt-logo-24.png" alt="" />
+              </a>
+              <a href="/" class="transition-colors duration-300 text-gray-200">
+                <img src="images/facebook-square-logo-24.png" alt="" />
+              </a>
+              <a href="/" class="transition-colors duration-300 text-gray-200">
+                <img src="images/tiktok-logo-24.png" alt="" />
+              </a>
+            </div>
+            <p class="mt-4 text-sm font-HelveticaNowDisplay text-gray-200">
+              Follow us on Instagram, Facebook, and TikTok.
+            </p>
+          </div>
+        </div>
+        <div
+          class="flex flex-col-reverse justify-between pt-5 pb-10 border-t lg:flex-row border-white border-opacity-20"
+        >
+          <p class="font-HelveticaNowDisplay text-sm text-gray-200">
+            © Copyright 2024 Lyte Inc. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="swiper-bundle.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const options = {
+          root: null, // relative to the viewport
+          rootMargin: "0px",
+          threshold: 0.1, // trigger when 10% of the element is in view
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("animate-from-bottom-heading");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, options);
+
+        const observerParagraph = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("animate-from-bottom-paragraph");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          options
+        );
+
+        const observerButton = new IntersectionObserver((entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("animate-from-bottom-button");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, options);
+
+        const heading = document.querySelector(".hero-txt");
+        const paragraph = document.querySelector(".text-gray-300");
+        const button = document.querySelector(".btn");
+
+        observer.observe(heading);
+        observerParagraph.observe(paragraph);
+        observerButton.observe(button);
+      });
+    </script>
+    <script src="scripts.js"></script>
+  </body>
+</html>

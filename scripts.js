@@ -105,11 +105,41 @@ window.addEventListener("load", function () {
     },
     breakpoints: {
       640: {
-        slidesPerView: 2,
+        slidesPerView: 1,
       },
       960: {
         slidesPerView: 1,
       },
     },
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const categoryLinks = document.querySelectorAll(".category-link");
+  const categoryContents = document.querySelectorAll(".category-content");
+
+  categoryLinks.forEach((link) => {
+    link.addEventListener("click", function (event) {
+      event.preventDefault();
+
+      // Remove active class from all links
+      categoryLinks.forEach((link) =>
+        link.classList.remove("active", "border-blue-500")
+      );
+      categoryLinks.forEach((link) =>
+        link.classList.add("text-gray-500", "border-transparent")
+      );
+
+      // Add active class to the clicked link
+      this.classList.add("active", "border-blue-500");
+      this.classList.remove("text-gray-500", "border-transparent");
+
+      // Hide all category contents
+      categoryContents.forEach((content) => content.classList.add("hidden"));
+
+      // Show the corresponding category content
+      const targetCategory = this.getAttribute("data-category");
+      document.getElementById(targetCategory).classList.remove("hidden");
+    });
   });
 });

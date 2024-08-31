@@ -396,7 +396,7 @@
             </div>
             <div class="w-full md:w-1/2 order-1 md:order-2 flex justify-center">
               <img
-                src="images/hiking.jpg"
+                src="images/benefits.jpg"
                 alt="Our Mission Icon"
                 class="relative z-20"
               />
@@ -434,10 +434,7 @@
                     poster="https://cdn.shopify.com/s/files/1/1338/1013/files/image_2023.png?v=1713986700"
                     __idm_id__="131074"
                   >
-                    <source
-                      src="images/sample-vid.mp4"
-                      type="video/mp4"
-                    /></video
+                    <source src="images/vid_pc.mp4" type="video/mp4" /></video
                   ><svg
                     viewBox="0 0 24 24"
                     class="pointer-events-none absolute left-1/2 top-1/2 w-10 -translate-x-1/2 -translate-y-1/2 text-white opacity-0 transition group-hover:opacity-90"
@@ -463,10 +460,7 @@
                     poster="https://cdn.shopify.com/s/files/1/1338/1013/files/image_2023.png?v=1713986700"
                     __idm_id__="131073"
                   >
-                    <source
-                      src="images/sample-vid-big.mp4"
-                      type="video/mp4"
-                    /></video
+                    <source src="images/vid_pc.mp4" type="video/mp4" /></video
                   ><svg
                     viewBox="0 0 24 24"
                     class="pointer-events-none absolute left-1/2 top-1/2 w-10 -translate-x-1/2 -translate-y-1/2 text-white opacity-0 transition group-hover:opacity-90"
@@ -517,79 +511,106 @@
               Products
             </h2>
           </header>
-          <!-- Category Links -->
-          <div class="flex space-x-4 mb-4">
-            <a
-              href="#"
-              class="category-link active font-HelveticaNowDisplay border-b-2 border-blue-500 pb-2 md:text-xl"
-              data-category="category1"
-              >Electrolyte Mix</a
-            >
-            <a
-              href="#"
-              class="category-link text-gray-500 border-b-2 border-transparent pb-2 hover:border-blue-500 md:text-xl"
-              data-category="category2"
-              >ORS</a
-            >
-          </div>
 
           <!-- Category Products -->
           <div class="mt-14">
-            <div id="category1" class="category-content flex gap-4">
-              <!-- Card -->
+            <div
+              id="category1"
+              class="category-content flex flex-col md:flex-row gap-8"
+            >
               <div
-                class="bg-white shadow rounded mb-4 border"
-                style="width: 350px; height: 400px"
+                class="relative flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
               >
-                <div
-                  class="w-full border-none bg-slate-100 flex items-center justify-center py-2"
+                <a
+                  class="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl"
+                  href="#"
                 >
                   <img
+                    class="object-cover mx-auto"
                     src="images/orange-new.png"
-                    alt=""
-                    class=""
-                    width="60"
-                    height="60"
+                    alt="product image"
                   />
-                </div>
-                <div class="w-full p-4">
-                  <h3
-                    class="md:text-xl text-lg font-HelveticaNowDisplay-ExtraBold w-3/4 mt-4 uppercase"
-                  >
-                    FRUIT COCKTAIL
-                  </h3>
-                  <p class="text-wrap text-gray-500">
-                    A delicious blend of tropical fruits that offers a burst of
-                    flavor.
-                  </p>
+                  <span
+                    class="absolute top-0 left-0 m-2 rounded-full bg-black px-2 text-center text-sm font-medium text-white"
+                  ></span>
+                </a>
+                <div class="mt-4 px-5 pb-5">
+                  <a href="#">
+                    <h5
+                      class="text-xl tracking-tight text-slate-900 font-HelveticaNowDisplay-ExtraBold"
+                    >
+                      FRUIT COCKTAIL
+                    </h5>
+                  </a>
+                  <div class="mt-2 mb-5 flex items-center justify-between">
+                    <p class="text-wrap text-gray-500">
+                      A delicious blend of tropical fruits that offers a burst
+                      of flavor.
+                    </p>
+                  </div>
                 </div>
               </div>
 
-              <!-- Card -->
               <div
-                class="bg-white shadow rounded mb-4 border"
-                style="width: 350px; height: 400px"
+                class="relative flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
               >
-                <div
-                  class="w-full border-none bg-slate-100 flex items-center justify-center py-2"
+                <a
+                  class="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl"
+                  href="#"
                 >
                   <img
+                    class="object-cover mx-auto"
                     src="images/green-new.png"
-                    alt=""
-                    class=""
-                    width="60"
-                    height="60"
+                    alt="product image"
                   />
+                  <span
+                    class="absolute top-0 left-0 m-2 rounded-full bg-black px-2 text-center text-sm font-medium text-white"
+                  ></span>
+                </a>
+                <div class="mt-4 px-5 pb-5">
+                  <a href="#">
+                    <h5
+                      class="text-xl tracking-tight text-slate-900 font-HelveticaNowDisplay-ExtraBold"
+                    >
+                      LEMON LIME
+                    </h5>
+                  </a>
+                  <div class="mt-2 mb-5 flex items-center justify-between">
+                    <p class="text-wrap text-gray-500">
+                      A zesty and invigorating flavor that refreshes your
+                      senses.
+                    </p>
+                  </div>
                 </div>
-                <div class="w-full p-4">
-                  <h3
-                    class="md:text-xl text-lg font-HelveticaNowDisplay-ExtraBold w-3/4 mt-4 uppercase"
-                  >
-                    LEMON LIME
-                  </h3>
-                  <p class="text-wrap text-gray-500">
-                    A zesty and invigorating flavor that refreshes your senses.
-                  </p>
+              </div>
+
+              <div
+                class="relative flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+              >
+                <a
+                  class="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl"
+                  href="#"
+                >
+                  <img
+                    class="object-cover mx-auto"
+                    src="images/orange-new.png"
+                    alt="product image"
+                  />
+                  <span
+                    class="absolute top-0 left-0 m-2 rounded-full bg-black px-2 text-center text-sm font-medium text-white"
+                  ></span>
+                </a>
+                <div class="mt-4 px-5 pb-5">
+                  <a href="#">
+                    <h5
+                      class="text-xl tracking-tight text-slate-900 font-HelveticaNowDisplay-ExtraBold"
+                    >
+                      ORS
+                    </h5>
+                  </a>
+                  <div class="mt-2 mb-5 flex items-center justify-between">
+                    <p class="text-wrap text-gray-500">Coming soon.........</p>
+                  </div>
                 </div>
               </div>
             </div>
